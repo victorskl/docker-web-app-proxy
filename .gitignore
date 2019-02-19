@@ -2,3 +2,5 @@
 *.iml
 web-app-proxy
 mock
+.env
+data

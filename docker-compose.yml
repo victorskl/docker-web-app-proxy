@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+
+  web-app-proxy:
+    image: victorskl/web-app-proxy:0.1.0
+    env_file: .env
+    ports:
+      - "8071:8071"
+    restart: always
