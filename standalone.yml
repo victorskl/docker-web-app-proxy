@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+
+  mongodb:
+    image: mongo:3.6.5
+    ports:
+      - "27017:27017"
+      - "8071:8071"
+    volumes:
+      - ./data/db:/data/db
+    container_name: mongodb
+    restart: always
+
+  web-app-proxy:
+    image: web-app-proxy:latest
+    environment:
+      - API: "http://localhost:8080/api"
+      - UI: "http://localhost:8080/ui"
+    depends_on:
+      - mongodb
+    network_mode: "service:mongodb"
+    restart: always
