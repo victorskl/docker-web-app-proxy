@@ -15,8 +15,8 @@ services:
   web-app-proxy:
     image: web-app-proxy:latest
     environment:
-      - API: "http://localhost:8080/api"
-      - UI: "http://localhost:8080/ui"
+      API: "http://localhost:8080/api"
+      UI: "http://localhost:8080/ui"
     depends_on:
       - mongodb
     network_mode: "service:mongodb"
