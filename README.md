@@ -9,9 +9,11 @@ git clone https://github.com/victorskl/docker-web-app-proxy
 
 cd docker-web-app-proxy
 
+cp env.sample .env
+
 git clone https://github.com/elmarquez/web-app-proxy.git
 
-mkdir -p ./data/db
+docker build -t web-app-proxy .
 
 docker-compose -f standalone.yml -p dev up -d
 ```
